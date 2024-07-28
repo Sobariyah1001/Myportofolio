@@ -1,0 +1,423 @@
+/* Reset default margin and padding */
+body, ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the navigation menu */
+nav {
+  background: black;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  font-family: 'Niramit', sans-serif;
+  position: fixed; /* Menjadikan navbar tetap di atas saat di-scroll */
+  width: 100%; /* Mengatur lebar navbar */
+  z-index: 1000; /* Mengatur tingkat z-index agar navbar muncul di atas konten */
+  top: 0; /* Menyematkan navbar di bagian atas */
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Set warna latar belakang untuk menu aktif */
+nav ul li a.active {
+  color: #acacac81; /* Ganti dengan warna yang diinginkan */
+}
+
+/* CSS for scrolling effect on the navbar */
+nav.scrolling {
+  background-color: rgba(51, 51, 51, 0.8); /* Ganti warna latar belakang sesuai kebutuhan */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the landing page content */
+.landing-page {
+  text-align: center;
+  color: #000000;
+  min-height: 100vh;
+}
+
+.landing-page h1 {
+  font-size: 2.5rem;
+}
+
+.landing-page p {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .landing-page h1 {
+    font-size: 2rem; /* Atur ukuran font lebih kecil untuk layar desktop kecil */
+  }
+
+  .landing-page p {
+    font-size: 0.001rem; /* Atur ukuran font lebih kecil untuk layar desktop kecil */
+  }
+
+  /* Gantilah ukuran font untuk bagian "Skills" dan "Project" sesuai kebutuhan */
+}
+
+/* Set different backgrounds for each menu option */
+.menu1 {
+  background-color: #f2f2f2;
+  position: relative;
+}
+
+
+.menu2 {
+  background-color: #ff0400;
+  position: relative;
+}
+
+.menu3 {
+  background-color: #ffffff; /* Latar belakang putih */
+  position: relative; /* Tetapkan posisi relatif untuk elemen agar kita bisa menambahkan elemen gelombang di atasnya */
+}
+
+.title-menu {
+  font-family: 'Marcellus';
+}
+
+/* Style the profile section */
+.profile {
+  padding-top: 70px;
+  padding-bottom: 150px;
+  color: #f2f2f2;
+  background-image: url('img/bg1.jpg');
+  background-size: cover;
+  background-position: center;
+  margin-bottom: -25px;
+  position: relative;
+}
+
+/* Tambahkan class "profile-blur" untuk efek blur pada bagian bawah background-image pada profil */
+.profile::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 200px; /* Sesuaikan tinggi overlay blur sesuai kebutuhan */
+  background-image: linear-gradient(to bottom, rgb(0 0 0 / 0%), rgb(0 0 0));;
+  filter: blur(-500px); /* Sesuaikan nilai blur sesuai kebutuhan */
+  z-index: 1;
+}
+
+.description{
+  padding-left: 250px;
+  padding-right: 250px;
+  font-family: 'Quicksand';
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s;
+}
+
+.profile-image img.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.profile-name {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Satisfy';
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.8s;
+}
+
+.profile-name.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.skills{
+  padding-top: 150px;
+  padding-bottom: 75px;
+  background-color: #000000;
+  color: #ffffff;
+  margin-bottom: -50px;
+}
+.skill-value {
+  width: 0;
+  height: 100%;
+  color: #ffffff;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 10px;
+  background-color: #464cff; /* Warna latar belakang default */
+  transition: width 1s ease; /* Animasi untuk perubahan lebar */
+}
+
+.skill-bar {
+  position: relative;
+  margin-bottom: 20px;
+  width: 40%; /* Sesuaikan lebar skill bar sesuai kebutuhan */
+  text-align: center;
+  margin-left: 30%;
+}
+
+.skill-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.skill-progress {
+  height: 20px;
+  background-color: #ddd;
+  position: relative;
+  border-radius: 10px;
+}
+
+.skill-value-html,  .skill-value-css, .skill-value-js, .skill-value-py, .skill-value-sql, .skill-value-php, .skill-value-laravel{
+  height: 100%;
+  color: #ffffff;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 10px;
+  transition: width 1s ease; /* Animation for width change */
+}
+.skill-value-html{
+  background-color: #464cff;
+}
+.skill-value-css{
+  background-color: rgb(8, 174, 196);
+}
+.skill-value-js{
+  background-color: rgb(0, 155, 103);
+}
+.skill-value-py{
+  background-color: rgb(0, 155, 39);
+}
+.skill-value-sql{
+  background-color: rgb(121, 155, 0);
+}
+.skill-value-php{
+  background-color: rgb(202, 149, 35);
+}
+.skill-value-laravel{
+  background-color: rgb(202, 68, 35);
+}
+.skill-value.animate {
+  width: var(--percentage); /* Gunakan CSS variable untuk animasi lebar */
+}
+/* .project{
+  background-image: url('img/bg45.png');
+  background-repeat: no-repeat;
+  padding-top: 70px;
+  padding-bottom: 150px;
+  background-size: cover;
+  background-position: center;
+  margin-top: -25px;
+  position: relative;
+} */
+.project-slider {
+  padding-top: 70px;
+  padding-bottom: 1000px;
+  background-image: url('img/bg9.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-top: -25px;
+}
+
+.slider-container {
+  padding-top: 75px;
+  margin-left: 100px;
+  margin-right: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 kolom dalam satu baris */
+  gap: 20px; /* Jarak antara kolom */
+}
+
+.project-slide {
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.project-slide img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.project-slide h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.project-slide p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.btn-link {
+  display: inline-block;
+  background-color: #464cff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn-link:hover {
+  background-color: #333;
+}
+
+.project-image {
+  /* background-image: url('img/bg1.jpg'); */
+  padding: 10px;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+
+.bg-project1{
+  background-image: url('img/project1/project1.png');
+  position: relative;
+  background-size: cover;
+}
+
+.bg-project2{
+  background-image: url('img/project2/rumah1.png');
+  position: relative;
+  background-size: cover;
+}
+
+.bg-project3{
+  background-image: url('img/project3/jamu1.png');
+  position: relative;
+  background-size: cover;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s;
+}
+
+.project-image img.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.wave-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent); Gradient gelap ke transparan */
+  z-index: 2; /* Atur z-index agar elemen gelombang berada di atas konten lain di dalam .menu3 */
+}
+
+.contact{
+  color: white;
+  padding-top: 185px;
+  padding-bottom: 7px;
+  background-image: url('img/bg10.png');
+  position: relative;
+  background-size: cover;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.contact-icons a {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.contact-icons img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Tambahkan efek transisi saat mengarahkan kursor ke gambar */
+.contact-icons a img:hover {
+  opacity: 0.8;
+}
+
+.footer {
+  /* background-color: #000000; Background abu-abu */
+  color: #fff;
+  /* padding: 20px; */
+  text-align: center;
+}
+
+.footer p {
+  margin-top: 60px;
+}
+.container-skill{
+  margin: 20px 50px 20px 50px;
+  display: flex;
+  /* color: #464cff; */
+}
+.hard-skill{
+  flex: 1;
+}
+.hard-skill:hover, .soft-skill:hover, .tools:hover{
+  opacity: 0.4;
+}
+.soft-skill{
+  flex: 1;
+}
+.tools{
+  flex: 1;
+}
+.hard-skill, .soft-skill, .tools{
+  background-color: #f2f2f2;
+  border-radius: 5%;
+  color: #000000;
+  margin: 20px 15px 100px 15px;
+  padding: 5px 10px 20px 10px;
+  box-shadow: 8px 4px 20px 1px rgb(111 142 255);
+}
